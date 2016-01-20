@@ -42,5 +42,19 @@ describe('graphql-dynamodb-connections', () => {
         }
       });
     });
+
+    it('should support an empty list of Items', () => {
+      dataToConnection({
+        Items: []
+      }).should.eql({
+        edges: [],
+        pageInfo: {
+          endCursor: null,
+          hasNextPage: false,
+          hasPreviousPage: false,
+          startCursor: null
+        }
+      });
+    });
   });
 });

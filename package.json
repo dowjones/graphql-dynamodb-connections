@@ -19,15 +19,16 @@
   "scripts": {
     "prepublish": "babel src -d lib --optional runtime",
     "lint": "eslint src test",
-    "test": "sh -c 'npm run lint && npm run test-cover'",
-    "test-cover": "istanbul cover _mocha -- -r should --recursive --compilers js:babel-register",
-    "test-cover-check": "istanbul check-coverage --statements 100 --functions 100 --branches 100 --lines 100",
-    "test-watch": "mocha -G -r should --recursive -w -R min -t 200 --compilers js:babel-register"
+    "test": "npm run lint && npm run test-cover && npm run test-check-coverage",
+    "test-watch": "babel-node ./node_modules/.bin/_mocha --require should --recursive --reporter min --watch",
+    "test-cover": "babel-node ./node_modules/.bin/babel-istanbul cover _mocha -- --require should --recursive",
+    "test-check-coverage": "babel-istanbul check-coverage --statements 100 --functions 100 --branches 100 --lines 100"
   },
   "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.4.0",
     "babel-eslint": "^5.0.0-beta6",
+    "babel-istanbul": "^0.6.0",
     "babel-plugin-transform-runtime": "^6.4.3",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
