@@ -32,6 +32,11 @@ const userConnections = {
   - `dataToConnection(data)` -- converts the data returned by DynamoDB into a [Connection type](https://facebook.github.io/relay/graphql/connections.htm#sec-Connection-Types)
 
 
+## Related
+
+[GraphQL REST Connections](https://github.com/dowjones/graphql-rest-connections)
+
+
 ## License
 
 [MIT](/LICENSE)
