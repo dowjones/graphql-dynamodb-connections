@@ -1,10 +1,10 @@
 {
   "name": "graphql-dynamodb-connections",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "AWS DynamoDB utilities to simplify working with GraphQL connections",
   "keywords": [
     "graphql",
-    "rest",
+    "dynamodb",
     "connections",
     "pagination"
   ],
