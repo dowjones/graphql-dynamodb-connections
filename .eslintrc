@@ -1,11 +1,19 @@
 {
   "parser": "babel-eslint",
-  "env": {"node": true},
+  "env": {
+    "node": true,
+    "mocha": true
+  },
   "rules": {
-    "strict": 0,
-    "curly": 0,
+    "indent": [2, 2],
+    "brace-style": [2, "1tbs"],
+    "comma-style": [2, "last"],
+    "curly": [2, "multi-line"],
     "quotes": [2, "single"],
+    "strict": 0,
     "camelcase": 0,
+    "no-debugger": 2,
+    "no-console": 2,
     "no-undef": 2,
     "no-underscore-dangle": 0,
     "no-mixed-requires": 0,
