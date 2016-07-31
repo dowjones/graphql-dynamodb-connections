@@ -2,8 +2,8 @@
 
 /**
  * This example shows how to use relay, graphql and dynamoDB with AWS lambda
- * - It uses native ES2015 Node.js (v4.3.2) features
- * - It uses graphql-dynamodb-connections to convert DynamoDB-style pagination to GraphQL Connection-style pagination
+ * - It uses graphql-dynamodb-connections to convert DynamoDB-style pagination to
+ *   GraphQL Connection-style pagination
  */
 
 const AWS = require('aws-sdk')
@@ -14,7 +14,6 @@ const GraphQLString = require('graphql').GraphQLString
 const GraphQLNonNull = require('graphql').GraphQLNonNull
 const GraphQLID = require('graphql').GraphQLID
 
-
 const connectionArgs = require('graphql-relay').connectionArgs
 const connectionDefinitions = require('graphql-relay').connectionDefinitions
 
@@ -22,8 +21,8 @@ const paginationToParams = require('graphql-dynamodb-connections').paginationToP
 const dataToConnection = require('graphql-dynamodb-connections').dataToConnection
 
 const dynamoConfig = {
-  sessionToken:    process.env.AWS_SESSION_TOKEN,
-  region:          process.env.AWS_REGION
+  sessionToken: process.env.AWS_SESSION_TOKEN,
+  region: process.env.AWS_REGION
 }
 
 const docClient = new AWS.DynamoDB.DocumentClient(dynamoConfig)
@@ -79,4 +78,3 @@ const schema = new GraphQLSchema({
 })
 
 module.exports = schema
-

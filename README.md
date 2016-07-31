@@ -26,7 +26,7 @@ const userConnections = {
 };
 ```
 
-a more complete example using native ES2015 Node.js features and be found [here](examples/schema.js)
+You can find more examples in [the examples folder](/examples).
 
 
 ## API
