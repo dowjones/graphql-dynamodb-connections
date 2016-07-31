@@ -17,14 +17,17 @@ const userConnections = {
   type: userConnection,
   args: connectionArgs,
   resolve: ((_, args) => {
-    promisifiedDocumentClient.scan({
+    return promisifiedDocumentClient.scan({
       TableName: 'users',
       ...paginationToParams(args)
     })
-    .then(data => dataToConnection(data));
+    .then(dataToConnection);
   })
 };
 ```
+
+You can find more examples in [the examples folder](/examples).
+
 
 ## API
 
